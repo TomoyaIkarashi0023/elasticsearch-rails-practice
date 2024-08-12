@@ -79,3 +79,32 @@ prefectures = [
 prefectures.each do |prefecture|
   Prefecture.create!(prefecture)
 end
+
+ordinance_designated_cities =[
+  { 'prefecture_id'=>13, 'name'=>'23区', 'slug'=>'23ku' },
+  { 'prefecture_id'=>13, 'name'=>'23区以外', 'slug'=>'23kuigai' },
+  { 'prefecture_id'=>1, 'name'=>'札幌市', 'slug'=>'sapporoshi' },
+  { 'prefecture_id'=>4, 'name'=>'仙台市', 'slug'=>'sendaishi' },
+  { 'prefecture_id'=>11, 'name'=>'さいたま市', 'slug'=>'saitamashi' },
+  { 'prefecture_id'=>12, 'name'=>'千葉市', 'slug'=>'chibashi' },
+  { 'prefecture_id'=>14, 'name'=>'横浜市', 'slug'=>'yokohamashi' },
+  { 'prefecture_id'=>14, 'name'=>'川崎市', 'slug'=>'kawasakishi' },
+  { 'prefecture_id'=>14, 'name'=>'相模原市', 'slug'=>'sagamiharashi' },
+  { 'prefecture_id'=>15, 'name'=>'新潟市', 'slug'=>'niigatashi' },
+  { 'prefecture_id'=>22, 'name'=>'静岡市', 'slug'=>'shizuokashi' },
+  { 'prefecture_id'=>22, 'name'=>'浜松市', 'slug'=>'hamamatsushi', },
+  { 'prefecture_id'=>23, 'name'=>'名古屋市', 'slug'=>'nagoyashi' },
+  { 'prefecture_id'=>26, 'name'=>'京都市', 'slug'=>'kyotoshi' },
+  { 'prefecture_id'=>27, 'name'=>'大阪市', 'slug'=>'osakashi' },
+  { 'prefecture_id'=>27, 'name'=>'堺市', 'slug'=>'sakaishi' },
+  { 'prefecture_id'=>28, 'name'=>'神戸市', 'slug'=>'kobeshi' },
+  { 'prefecture_id'=>33, 'name'=>'岡山市', 'slug'=>'okayamashi' },
+  { 'prefecture_id'=>34, 'name'=>'広島市', 'slug'=>'hiroshimashi' },
+  { 'prefecture_id'=>40, 'name'=>'北九州市', 'slug'=>'kitakyushushi' },
+  { 'prefecture_id'=>40, 'name'=>'福岡市', 'slug'=>'fukuokashi' },
+  { 'prefecture_id'=>43, 'name'=>'熊本市', 'slug'=>'kumamotoshi' },
+]
+
+ordinance_designated_cities.each do |city|
+  OrdinanceDesignatedCity.create!(city)
+end

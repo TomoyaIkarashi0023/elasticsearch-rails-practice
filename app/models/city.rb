@@ -1,5 +1,9 @@
 class City < ApplicationRecord
   include Elasticsearch::Model
+
+  belongs_to :prefecture
+  belongs_to :ordinance_designated_city, optional: true
+
   settings do
     mappings dynamic: 'false' do
       indexes :prefecture_id, type: 'integer'
