@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_135426) do
   create_table "railway_companies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "code"
     t.string "name", null: false
-    t.string "officaial_name"
+    t.string "official_name"
     t.string "short_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
