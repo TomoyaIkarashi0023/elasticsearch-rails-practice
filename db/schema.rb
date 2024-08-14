@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_12_141119) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_14_135426) do
   create_table "cities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "prefecture_id", null: false
     t.bigint "ordinance_designated_city_id"
@@ -43,6 +43,45 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_12_141119) do
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "railway_companies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "code"
+    t.string "name", null: false
+    t.string "official_name"
+    t.string "short_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "railway_route_stations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "railway_route_id", null: false
+    t.bigint "railway_station_id", null: false
+    t.integer "code", null: false
+    t.string "name", null: false
+    t.string "address"
+    t.decimal "latitude", precision: 9, scale: 7, null: false
+    t.decimal "longitude", precision: 10, scale: 7, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "railway_routes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "railway_company_id", null: false
+    t.integer "code", null: false
+    t.string "name", null: false
+    t.string "official_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "railway_stations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "code", null: false
+    t.string "name", null: false
+    t.bigint "prefecture_id", null: false
+    t.bigint "city_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
