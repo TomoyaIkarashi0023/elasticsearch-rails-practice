@@ -3,6 +3,7 @@ require 'csv'
 task create_cities: :environment do
   CSV.foreach('lib/tasks/import_data/import_cities.csv', headers: true) do |row|
     City.create(
+      id: row['id'],
       prefecture_id: row['prefecture_id'],
       ordinance_designated_city_id: row['ordinance_designated_city_id'],
       name: row['name'],
