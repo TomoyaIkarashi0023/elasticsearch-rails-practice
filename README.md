@@ -13,13 +13,21 @@ https://docs.docker.com/get-docker
 1. `$ Rails.application.load_tasks` を実行
 1. `$ Rake::Task['create_cities'].execute` を実行
 1. `$ Rake::Task['create_railway_data'].execute` を実行
-1. `$ Product.__elasticsearch__.create_index!`
-1. `$ Product.import`
+1. `$ Product.__elasticsearch__.create_index!` を実行
+1. `$ Product.import` を実行
+1. `$ RailwayStation.__elasticsearch__.create_index!` を実行
+1. `$ RailwayStation.import` を実行
 
-## elasticsearchの動作確認
+## elasticsearchのコマンドサンプル
 * Productのindex作成ないしimportの実行が成功しているか確認したい場合
   * rails コンソールにて以下を実行する、結果がDB側に保存されているProductの総数と一致している場合ok
   * `$ Product.__elasticsearch__.search('*').results.total`
+* 現在のmappingを確認したい場合
+  * `$ RailwayStation.__elasticsearch__.client.indices.get_mapping index: "railway_stations"`
+* indexを更新したい場合
+  * `$ RailwayStation.reindex`
+* mappingの更新
+  * `$ RailwayStation.__elasticsearch__.client.indices.put_mapping(index: RailwayStation.index_name, type: RailwayStation.document_type, body: RailwayStation.mapping.to_hash)`
 
 # その他
 * db制約を一切していません、seedなどcreateを複数回実行すると重複したデータが作成されてしまうことに注意してください
