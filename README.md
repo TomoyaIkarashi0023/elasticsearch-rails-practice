@@ -2,7 +2,7 @@
 ## Dockerをインストール
 https://docs.docker.com/get-docker
 - メモリの割り当てはよしなにしてください
-  - Preferences → Resources → Advanced → Memory
+  - Preferences or Settings → Resources → Advanced → Memory
 ## セットアップ
 1. `$ docker compose build`を実行
 1. `$ docker compose run app bash`(appコンテナに移動)
