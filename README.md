@@ -28,6 +28,9 @@ https://docs.docker.com/get-docker
   * `$ RailwayStation.reindex`
 * mappingの更新
   * `$ RailwayStation.__elasticsearch__.client.indices.put_mapping(index: RailwayStation.index_name, type: RailwayStation.document_type, body: RailwayStation.mapping.to_hash)`
+ 
+## 駅テーブル周りのテーブルイメージ
+<img width="876" alt="スクリーンショット 2024-08-19 14 36 02" src="https://github.com/user-attachments/assets/f8f9d394-528f-431a-a373-4c3309164053">
 
 # その他
 * db制約を一切していません、seedなどcreateを複数回実行すると重複したデータが作成されてしまうことに注意してください
